@@ -1,0 +1,3 @@
+Nama = KATTRIA
+Umur = 24
+No. Hp = 082288043428
