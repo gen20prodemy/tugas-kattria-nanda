@@ -11,8 +11,17 @@ public class Main {
 
         while (!inNamaBarang.equalsIgnoreCase("selesai")){
             namaBarang.add(inNamaBarang);
-            System.out.println(inNamaBarang+" berhasil di input");
+            inNamaBarang = input.nextLine();
+        }
 
+        System.out.println("\nDaftar Nama barang");
+
+        if (namaBarang.isEmpty()) {
+            System.out.println("Tidak ada barang yang dimasukkan");
+        }else {
+            for (String barang : namaBarang){
+                System.out.println("- "+barang);
+            }
         }
 
     }
