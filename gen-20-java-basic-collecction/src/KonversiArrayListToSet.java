@@ -14,7 +14,7 @@ public class KonversiArrayListToSet {
         for (String isi : setList){
             System.out.println(isi);
         }
-
     }
+
 
 }

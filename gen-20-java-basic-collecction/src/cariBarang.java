@@ -3,18 +3,17 @@ import java.util.Scanner;
 
 public class cariBarang {
     //berdasarkan nama
-    public static String berdasarkanNama (ArrayList<String> nBarang, String nama){
+    public static ArrayList<Integer> berdasarkanNama (ArrayList<String> nBarang, String nama){
+        ArrayList listDitemukan = new ArrayList<>();
         for (int i = 0 ; i < nBarang.size();i++ ) {
-            if (nBarang.get(i).contains(nama)) {
-                System.out.println("ditemukan di indeks ke - "+i+1);
-                return nBarang.get(i);
+            if (nBarang.get(i).equalsIgnoreCase(nama)) {
+                listDitemukan.add(i);
             }
-        } return null;
+        } return listDitemukan;
     }
 
     //berdasaarkan index
     public static String berdasarkanIndex (ArrayList<String> nBarang, Integer index){
-
         for (int i = 0 ; i < nBarang.size();i++ ) {
             if (i==index-1) {
                 return nBarang.get(i);

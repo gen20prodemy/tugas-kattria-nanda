@@ -19,9 +19,9 @@ public class Main {
             System.out.println("2. Menampilkan Daftar Nama Barang Yang Telah Di input");
             System.out.println("3. Menampilkan Nama Barang Tertentu");
             System.out.println("4. Konversi Data ke ArrayList ke HasSet dan Tampilkan");
-            System.out.print("Msukkan Pilihan = ");
+            System.out.print("Masukkan Pilihan = ");
             int n = input.nextInt();
-           // validPilihan(n);
+           //validPilihan(n);
 
             switch (n) {
                 case 1:
@@ -87,11 +87,12 @@ public class Main {
             case 1:
                 System.out.print("Cari = ");
                 in.nextLine();
+
                 String nama = in.nextLine();
 
-                String namaBarang = cariBarang.berdasarkanNama(nBarang, nama);
-                if (nama !=null){
-                    System.out.println("\nBarang di temukan \n"+namaBarang);
+                ArrayList<Integer> namaBarang = cariBarang.berdasarkanNama(nBarang, nama);
+                if (!namaBarang.isEmpty()){
+                    System.out.println("Nama ' "+nama+ "' ditemukan di index : "+namaBarang);
                 }else {
                     System.out.println("Barang tidak di temukan");
                 }
