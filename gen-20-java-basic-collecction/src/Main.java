@@ -1,6 +1,5 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.sql.SQLOutput;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,10 +17,11 @@ public class Main {
             System.out.println("Apa yang ingin anda lakukan dengan data ini?");
             System.out.println("1. Mengetahui Jumlah Nama Barang yang Telah di Input");
             System.out.println("2. Menampilkan Daftar Nama Barang Yang Telah Di input");
-            System.out.println("3. Menampilkan Nama Barang Berdasarkan Index");
-            System.out.println("4. Konversi Data ke ArrayList ke LinkedList dan Tampilkan");
-            System.out.println("Msukkan Pilihan = ");
+            System.out.println("3. Menampilkan Nama Barang Tertentu");
+            System.out.println("4. Konversi Data ke ArrayList ke HasSet dan Tampilkan");
+            System.out.print("Msukkan Pilihan = ");
             int n = input.nextInt();
+           // validPilihan(n);
 
             switch (n) {
                 case 1:
@@ -31,13 +31,32 @@ public class Main {
                     daftarNB(namaBarang);
                     break;
                 case 3:
+                    cariNamaBarang(namaBarang);
                     break;
                 case 4:
+                    KonversiArrayListToSet.cetakKonversi(namaBarang);
+                    break;
+                default:
+                    System.out.println("Pilihan Tidak Tersedia");
                     break;
 
             }
 
     }
+
+    //Exception
+    /*public static int validPilihan (int a){
+        try{
+            Scanner in = new Scanner(System.in);
+            a=in.nextInt();
+        }catch (InputMismatchException e){
+            System.out.println("Opss pilihan yang anda masukkan tidak tersedia");
+        }finally {
+            return a;
+        }
+
+    }*/
+
 
     //cek jumlah input
     public static void sumInputNB(ArrayList<String> nBarang) {
@@ -53,6 +72,43 @@ public class Main {
             for (String barang : daftarNB) {
                 System.out.println("- " + barang);
             }
+        }
+    }
+
+    //menampilkan nama barang tertentu
+    private static void cariNamaBarang (ArrayList<String> nBarang){
+        Scanner in = new Scanner(System.in);
+        System.out.println("Cari Barang Berdasarkan");
+        System.out.println("1. Nama");
+        System.out.println("2. index");
+        System.out.print("Masukkan pilihan = ");
+        int a = in.nextInt();
+        switch (a){
+            case 1:
+                System.out.print("Cari = ");
+                in.nextLine();
+                String nama = in.nextLine();
+
+                String namaBarang = cariBarang.berdasarkanNama(nBarang, nama);
+                if (nama !=null){
+                    System.out.println("\nBarang di temukan \n"+namaBarang);
+                }else {
+                    System.out.println("Barang tidak di temukan");
+                }
+                break;
+            case 2:
+                System.out.print("Cari Index ke = ");
+                int index = in.nextInt();
+                String barangCari = cariBarang.berdasarkanIndex(nBarang, index);
+                if (barangCari !=null){
+                    System.out.println("\nBarang ke "+index+ " ditemukan dengan nama \""+barangCari+"\"");
+                }else {
+                    System.out.println("Barang tidak di temukan");
+                }
+                break;
+            default:
+                System.out.println("Pilihan Tidak Tersedia");
+                break;
         }
     }
 
