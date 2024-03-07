@@ -7,6 +7,7 @@ public class Pakaian {
 
     //namaProduk
     public String getMerkProduk() {
+
         return merkProduk;
     }
     public void setMerkProduk(String namaProduk) {
@@ -41,12 +42,6 @@ public class Pakaian {
 
 
 
-    //method laba kotor
-    public  int labaKotor (int hargaProduk){
-        System.out.println("Laba Kotor");
-        return this.hargaProduk;
-    }
-
     public Pakaian(){
 
     }
@@ -57,6 +52,12 @@ public class Pakaian {
         setHargaProduk(hargaProduk);
         //setProdukTerjual(produkTerjual);
     }
+    //method laba kotor
+    public  int labaKotor (int hargaProduk){
+        System.out.println("Laba Kotor");
+        return this.hargaProduk;
+    }
+
 
     //print
     public void print(){
@@ -66,5 +67,7 @@ public class Pakaian {
         //System.out.println("Produk yang terjual = "+produkTerjual+"\n");
 
     }
+
+
 
 }

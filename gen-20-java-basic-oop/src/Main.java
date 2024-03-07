@@ -76,6 +76,9 @@ public class Main {
 
         System.out.println("Laba bersih untuk merk "+newCelana.getMerkProduk()+" = "+lababersih);
 
+        //polimorpis
+        Pakaian gamis = new Baju("Zazkia", "Gamis", 10000); //jenisnya pakaian yang merupakan obj dari baju
+        gamis.print();
 
 
     }
