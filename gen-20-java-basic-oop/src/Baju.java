@@ -1,8 +1,14 @@
 public class Baju extends Pakaian{
+   public Baju(){
+
+    }
+    public Baju(String merk, String jenis, int harga) {
+        super(merk, jenis, harga);
+    }
+
     @Override
-    public void labaKotor(int hargaProduk, int produkTerjual) {
-        int labaKotor = hargaProduk * produkTerjual ;
-        System.out.println("Laba Kotor = "+labaKotor);
+    public int labaKotor(int produkTerjual) {
+        return super.labaKotor(getHargaProduk())*produkTerjual;
     }
 
 }

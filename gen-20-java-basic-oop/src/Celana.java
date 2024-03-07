@@ -9,9 +9,20 @@ public class Celana extends Pakaian{
         this.modal = modal;
     }
 
-    public static void labaBersih (int labakotor, int modal){
-        int labaBersih = labakotor - modal ;
+   public Celana (){
+
+    }
+
+    public Celana (String merkProduk, String jenisProduk, int hargaProduk, int modal){
+        super(merkProduk, jenisProduk, hargaProduk);
+        setModal(modal);
+    }
+
+    public int labaBersih (int modal){
+        int labaBersih = this.labaKotor(getHargaProduk()) - modal ;
         System.out.println("Laba Bersih = "+labaBersih);
+        return labaBersih;
+
     }
 
     @Override
