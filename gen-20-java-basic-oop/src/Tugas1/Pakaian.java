@@ -1,3 +1,5 @@
+package Tugas1;
+
 public class Pakaian {
     //atribut
     private String merkProduk;

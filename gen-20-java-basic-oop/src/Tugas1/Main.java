@@ -1,16 +1,17 @@
+package Tugas1;
+
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        //data Baju dengan inputan user
+        //data Tugas1.Baju dengan inputan user
         Scanner input = new Scanner(System.in);
         ArrayList <Baju> detailBaju = new ArrayList();
-        System.out.println("Masukkan data Baju, ketik \"selesai\" untuk mengakhiri");
+        System.out.println("Masukkan data Tugas1.Baju, ketik \"selesai\" untuk mengakhiri");
         while (true) {
-            System.out.print("Merk Baju = ");
+            System.out.print("Merk Tugas1.Baju = ");
             String merk;
             String jenis;
                  try {
@@ -25,7 +26,7 @@ public class Main {
                  }
             int harga = 0;
                 try {
-                      System.out.print("Harga Baju = ");
+                      System.out.print("Harga Tugas1.Baju = ");
                       harga = Integer.parseInt(input.nextLine());
 
                 } catch (NumberFormatException e){
@@ -37,7 +38,7 @@ public class Main {
             detailBaju.add(baju);
         }
 
-        System.out.println("Data Baju Yang dimasukkan = ");
+        System.out.println("Data Tugas1.Baju Yang dimasukkan = ");
         for (Baju baju : detailBaju){
             baju.print();
             /*System.out.println("\nMerek = "+ baju.getMerkProduk());

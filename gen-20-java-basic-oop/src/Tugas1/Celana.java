@@ -1,3 +1,5 @@
+package Tugas1;
+
 public class Celana extends Pakaian{
     private int modal ;
 

@@ -1,3 +1,5 @@
+package Tugas1;
+
 public class Baju extends Pakaian{
    public Baju(){
 
