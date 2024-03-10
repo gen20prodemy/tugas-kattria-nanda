@@ -1,0 +1,3 @@
+Cara Membuat File pada Java
+ 1. gunakan class "BufferedWriter" untuk memasukkan inputan string dan  "FileWriter" untuk membuat file tersebut
+ 2. gunakan perintah "writer.(nama object bufferedWriter)" untuk mengetik atau mengisi file 

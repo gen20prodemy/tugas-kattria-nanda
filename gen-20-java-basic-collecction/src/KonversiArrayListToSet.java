@@ -4,6 +4,7 @@ import java.util.Set;
 
 public class KonversiArrayListToSet {
     public static Set<String> konversiKeSet (ArrayList<String> namaList){
+
         return new HashSet<>(namaList);
     }
 

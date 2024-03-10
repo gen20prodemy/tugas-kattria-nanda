@@ -1,4 +1,4 @@
-import Tugas.Pojo.PojoData;
+import Tugas2.Pojo.PojoData;
 
 import java.util.Map;
 import java.util.Scanner;

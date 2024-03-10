@@ -4,15 +4,7 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         ArrayList<String> namaBarang = new ArrayList<>();
-        Scanner input = new Scanner(System.in);
 
-        System.out.println("Masukkan Nama Barang (ketik selesai jika penginputan selesai)");
-        String inNamaBarang = input.nextLine();
-
-        while (!inNamaBarang.equalsIgnoreCase("selesai")) {
-            namaBarang.add(inNamaBarang);
-            inNamaBarang = input.nextLine();
-        }
 
             System.out.println("Apa yang ingin anda lakukan dengan data ini?");
             System.out.println("1. Mengetahui Jumlah Nama Barang yang Telah di Input");
@@ -113,4 +105,17 @@ public class Main {
         }
     }
 
-}
+    //Menambahkan data
+    public static void inputData (ArrayList<String> nBarang){
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Masukkan Nama Barang (ketik selesai jika penginputan selesai)");
+        String inNamaBarang = input.nextLine();
+
+        while (!inNamaBarang.equalsIgnoreCase("selesai")) {
+            namaBarang.add(inNamaBarang);
+            inNamaBarang = input.nextLine();
+        }
+    }
+
+}//akhir program

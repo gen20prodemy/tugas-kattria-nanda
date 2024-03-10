@@ -1,3 +1,8 @@
-Nama = KATTRIA
-Umur = 24
-No. Hp = 082288043428
+Kattria : 123456
+1234: 98989
+Karina: 990909
+siapa: 445667
+popo: 55555
+mutia : 234567
+Syafira : 123456
+oki: 989898
