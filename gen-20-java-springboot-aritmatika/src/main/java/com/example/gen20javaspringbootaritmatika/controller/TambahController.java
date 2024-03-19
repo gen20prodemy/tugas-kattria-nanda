@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api")
 public class TambahController {
-    private final TambahService tambahService;
+    private  TambahService tambahService;
 
     @Autowired
     public TambahController (TambahService tambahService){
