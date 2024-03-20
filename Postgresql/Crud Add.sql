@@ -7,10 +7,10 @@ VALUES
 
 INSERT INTO Produk (produk_id, produk_nama, produk_harga, kategori_id)
 VALUES 
-		(4,'Speaker',25.50, 2),
-		(5,'CPU', 250.00, 1),
-		(6,'Keyboard', 75.25, 2),
-		(7,'Tas Laptop', 30000, 3) 
+		(1,'Speaker',25.50, 2),
+		(2,'CPU', 250.00, 1),
+		(3,'Keyboard', 75.25, 2),
+		(4,'Tas Laptop', 30000, 3) 
 ;
 
 INSERT INTO Transaktions (trans_tanggal, trans_total)
