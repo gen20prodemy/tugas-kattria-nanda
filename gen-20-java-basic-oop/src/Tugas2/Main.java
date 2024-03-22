@@ -43,7 +43,7 @@ public class Main {
                     default:
                         System.out.println("Pilihan tidak valid. Silakan pilih lagi.");
                 }
-            }} catch (Exception e) {
+            } catch (Exception e){
             System.err.println("Terjadi eksepsi: " + e.getMessage());
             // (Anda dapat menangani eksepsi lebih spesifik jika diperlukan)
         }
