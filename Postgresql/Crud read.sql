@@ -1,6 +1,9 @@
 SELECT * FROM Produk;--menampilkan semua yang ada di tabel produk'
 SELECT * FROM Kategori;
 
+SELECT * FROM user_data WHERE gender= 'Male';
+
+
 SELECT * FROM Produk Where Kategori_id = 1; --menampilkan semua yang memiliki kategori id =1
 
 SELECT produk_nama, produk_harga FROM Produk; --menampilkan berdasarkan kolom
