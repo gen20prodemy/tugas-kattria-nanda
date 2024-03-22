@@ -33,4 +33,11 @@ public class UserController {
         List<UserDto> user = userService.findUserByUserName(userName);
         return ResponseEntity.ok(user);
     }
+
+    @GetMapping("/getjpql")
+    public ResponseEntity <List<UserDto>> getAllUserJpql (){
+        List<UserDto> user = userService.getAllUserJpql();
+        return ResponseEntity.ok(user);
+    }
+
 }
