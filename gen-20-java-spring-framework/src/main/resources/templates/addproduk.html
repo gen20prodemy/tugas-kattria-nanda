@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>Add new Product</h2>
+    <div>
+            <form th:object = "${product}" method = "post" th:action="@{/save}">
+                <div>
+                    <label>Name</label>
+                    <input type="text" th:field="*{name}"/>
+                </div>
+                <div>
+                    <label>Category</label>
+                    <input type="text"th:field="*{category}"/>
+                </div>
+                <div>
+                    <label>Price</label>
+                    <input type="number"th:field="*{price}"/>
+                </div>
+                <br/>
+                <p>
+                    <button type="submit">Submit</button>
+                </p>
+            </form>
+    </div>
+
+</body>
+</html>
