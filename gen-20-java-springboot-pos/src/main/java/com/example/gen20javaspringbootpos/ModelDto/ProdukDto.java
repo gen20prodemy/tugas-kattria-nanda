@@ -1,37 +1,20 @@
 package com.example.gen20javaspringbootpos.ModelDto;
 
 import com.example.gen20javaspringbootpos.Entity.KategoriEntity;
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-
-import java.util.List;
+import jakarta.validation.constraints.NotEmpty;
 
 public class ProdukDto {
-    private Long produkId;
+    @NotEmpty(message = "Nama produk kosong!")
     private String produkNama;
     private Double produkHarga;
-//    private Integer kategoriId;
-    @ManyToOne
-    @JoinColumn(name = "kategori_id")
+//    @ManyToOne
+//    @JoinColumn(name = "kategori_id")
     private KategoriEntity kategoriId;
 
-    public ProdukDto() {
-    }
-
-    public ProdukDto(Long produkId, String produkNama, Double produkHarga, KategoriEntity kategoriId) {
-        this.produkId = produkId;
+    public ProdukDto(String produkNama, Double produkHarga, KategoriEntity kategoriId) {
         this.produkNama = produkNama;
         this.produkHarga = produkHarga;
         this.kategoriId = kategoriId;
-    }
-
-    public Long getProdukId() {
-        return produkId;
-    }
-
-    public void setProdukId(Long produkId) {
-        this.produkId = produkId;
     }
 
     public String getProdukNama() {

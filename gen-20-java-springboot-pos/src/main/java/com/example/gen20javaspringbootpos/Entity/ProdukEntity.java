@@ -6,27 +6,23 @@ import jakarta.persistence.*;
 @Table(name = "produk")
 public class ProdukEntity {
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long produkId;
     @Column
     private String produkNama;
     @Column
     private Double produkHarga;
 
-//    @Column
-//    private Integer kategoriId;
     @ManyToOne
-    @JoinColumn (name = "kategori_id")
-    private KategoriEntity kategoriId;
+    private KategoriEntity kategoriEntity;
 
     public ProdukEntity() {
     }
 
-    public ProdukEntity(Long produkId, String produkNama, Double produkHarga, KategoriEntity kategoriId) {
-        this.produkId = produkId;
+    public ProdukEntity( String produkNama, Double produkHarga, KategoriEntity kategoriEntity) {
         this.produkNama = produkNama;
         this.produkHarga = produkHarga;
-        this.kategoriId = kategoriId;
+        this.kategoriEntity = kategoriEntity;
     }
 
     public Long getProdukId() {
@@ -53,11 +49,11 @@ public class ProdukEntity {
         this.produkHarga = produkHarga;
     }
 
-    public KategoriEntity getKategoriId() {
-        return kategoriId;
+    public KategoriEntity getKategoriEntity() {
+        return kategoriEntity;
     }
 
-    public void setKategoriId(KategoriEntity kategoriId) {
-        this.kategoriId = kategoriId;
+    public void setKategoriEntity(KategoriEntity kategoriEntity) {
+        this.kategoriEntity = kategoriEntity;
     }
 }

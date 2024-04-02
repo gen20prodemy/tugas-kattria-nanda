@@ -1,10 +1,6 @@
 package com.example.gen20javaspringbootpos.Entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table (name = "kategori")
@@ -15,14 +11,14 @@ public class KategoriEntity {
     @Column
     private String katNama;
 
-
-
     public KategoriEntity() {
-
     }
 
-    public KategoriEntity(Long katId, String katNama) {
+    public KategoriEntity(Long katId) {
         this.katId = katId;
+    }
+
+    public KategoriEntity(String katNama) {
         this.katNama = katNama;
     }
 

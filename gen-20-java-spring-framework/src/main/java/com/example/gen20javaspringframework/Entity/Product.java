@@ -1,9 +1,18 @@
 package com.example.gen20javaspringframework.Entity;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "product")
 public class Product {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column (length = 150, nullable = false)
     private String name;
+    @Column
     private String category;
+    @Column
     private double price;
 
     public Product() {

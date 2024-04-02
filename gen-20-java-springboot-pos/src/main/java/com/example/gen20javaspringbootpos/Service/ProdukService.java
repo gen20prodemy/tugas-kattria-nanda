@@ -28,11 +28,7 @@ public class ProdukService {
 
     public List<ProdukDto> getAllProduk (){
         List <ProdukEntity> produk = produkRepository.findAll();
-        return produk.stream().map((produkEntity)-> ProdukConvert.entityToDto(produkEntity)).collect(Collectors.toList());
+        return produk.stream().map((produkEntity) -> ProdukConvert.entityToDto(produkEntity)).collect(Collectors.toList());
     }
 
-//
-//    public List<ProdukEntity> getAllProduk (){
-//        return produkRepository.findAllProduk();
-//    }
 }

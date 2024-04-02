@@ -1,20 +1,16 @@
 package com.example.gen20javaspringbootpos.ModelDto;
 
+import jakarta.validation.constraints.NotEmpty;
+
 public class KategoriDto {
-    private Long katId;
+    @NotEmpty(message = "Nama kategori kosong!")
     private String katNama;
 
-    public KategoriDto(Long katId, String katNama) {
-        this.katId = katId;
+    public KategoriDto() {
+    }
+
+    public KategoriDto(String katNama) {
         this.katNama = katNama;
-    }
-
-    public Long getKatId() {
-        return katId;
-    }
-
-    public void setKatId(Long katId) {
-        this.katId = katId;
     }
 
     public String getKatNama() {

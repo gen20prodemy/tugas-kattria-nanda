@@ -38,7 +38,6 @@ public class Main {
         if (username.matches(".*\\d.*")) {
             throw new CostumeException("Nama tidak boleh berisi angka");
         }
-
         //Nama Harus dengan Huruf Besar
         if (!username.matches("[A-Z]+")) {
             throw new CostumeException("Nama harus huruf besar");
