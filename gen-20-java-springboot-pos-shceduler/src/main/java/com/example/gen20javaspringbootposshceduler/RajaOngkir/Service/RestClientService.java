@@ -1,8 +1,8 @@
-package com.example.gen20javaspringbootpos.RajaOngkir.Service;
+package com.example.gen20javaspringbootposshceduler.RajaOngkir.Service;
 
-import com.example.gen20javaspringbootpos.RajaOngkir.Dto.ProvinceDto;
-import com.example.gen20javaspringbootpos.RajaOngkir.Entity.Province;
-import com.example.gen20javaspringbootpos.RajaOngkir.Repository.ProvinceRepo;
+import com.example.gen20javaspringbootposshceduler.RajaOngkir.Dto.ProvinceDto;
+import com.example.gen20javaspringbootposshceduler.RajaOngkir.Entity.Province;
+import com.example.gen20javaspringbootposshceduler.RajaOngkir.Repository.ProvinceRepo;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;

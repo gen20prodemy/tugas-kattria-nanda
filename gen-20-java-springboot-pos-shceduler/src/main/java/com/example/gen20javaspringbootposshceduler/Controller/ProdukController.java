@@ -1,13 +1,12 @@
-package com.example.gen20javaspringbootpos.Controller;
+package com.example.gen20javaspringbootposshceduler.Controller;
 
-import com.example.gen20javaspringbootpos.ModelDto.ProdukDto;
-import com.example.gen20javaspringbootpos.ModelDto.ResponseDto;
-import com.example.gen20javaspringbootpos.Service.ProdukService;
+import com.example.gen20javaspringbootposshceduler.ModelDto.ProdukDto;
+import com.example.gen20javaspringbootposshceduler.ModelDto.ResponseDto;
+import com.example.gen20javaspringbootposshceduler.Service.ProdukService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;

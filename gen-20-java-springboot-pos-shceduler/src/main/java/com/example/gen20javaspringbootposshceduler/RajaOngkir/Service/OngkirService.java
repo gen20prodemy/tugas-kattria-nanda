@@ -1,6 +1,6 @@
-package com.example.gen20javaspringbootpos.RajaOngkir.Service;
+package com.example.gen20javaspringbootposshceduler.RajaOngkir.Service;
 
-import com.example.gen20javaspringbootpos.RajaOngkir.Dto.OngkirRequestDto;
+import com.example.gen20javaspringbootposshceduler.RajaOngkir.Dto.OngkirRequestDto;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;

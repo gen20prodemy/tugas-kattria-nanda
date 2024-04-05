@@ -1,4 +1,4 @@
-package com.example.gen20javaspringbootpos.RajaOngkir.Dto;
+package com.example.gen20javaspringbootposshceduler.RajaOngkir.Dto;
 
 public class OngkirRequestDto {
     private String origin;

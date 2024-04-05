@@ -1,4 +1,4 @@
-package com.example.gen20javaspringbootpos.RajaOngkir.Entity;
+package com.example.gen20javaspringbootposshceduler.RajaOngkir.Entity;
 
 import jakarta.persistence.*;
 

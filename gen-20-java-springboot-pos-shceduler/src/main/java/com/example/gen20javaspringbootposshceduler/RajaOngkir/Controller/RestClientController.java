@@ -1,7 +1,7 @@
-package com.example.gen20javaspringbootpos.RajaOngkir.Controller;
+package com.example.gen20javaspringbootposshceduler.RajaOngkir.Controller;
 
-import com.example.gen20javaspringbootpos.RajaOngkir.Dto.ProvinceDto;
-import com.example.gen20javaspringbootpos.RajaOngkir.Service.RestClientService;
+import com.example.gen20javaspringbootposshceduler.RajaOngkir.Dto.ProvinceDto;
+import com.example.gen20javaspringbootposshceduler.RajaOngkir.Service.RestClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Scheduled;

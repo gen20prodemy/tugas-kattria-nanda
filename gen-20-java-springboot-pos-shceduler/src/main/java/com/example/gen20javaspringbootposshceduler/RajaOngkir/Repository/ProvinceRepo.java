@@ -1,6 +1,6 @@
-package com.example.gen20javaspringbootpos.RajaOngkir.Repository;
+package com.example.gen20javaspringbootposshceduler.RajaOngkir.Repository;
 
-import com.example.gen20javaspringbootpos.RajaOngkir.Entity.Province;
+import com.example.gen20javaspringbootposshceduler.RajaOngkir.Entity.Province;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

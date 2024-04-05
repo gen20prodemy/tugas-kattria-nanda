@@ -1,7 +1,7 @@
-package com.example.gen20javaspringbootpos.RajaOngkir.Controller;
+package com.example.gen20javaspringbootposshceduler.RajaOngkir.Controller;
 
-import com.example.gen20javaspringbootpos.RajaOngkir.Dto.OngkirRequestDto;
-import com.example.gen20javaspringbootpos.RajaOngkir.Service.OngkirService;
+import com.example.gen20javaspringbootposshceduler.RajaOngkir.Dto.OngkirRequestDto;
+import com.example.gen20javaspringbootposshceduler.RajaOngkir.Service.OngkirService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
