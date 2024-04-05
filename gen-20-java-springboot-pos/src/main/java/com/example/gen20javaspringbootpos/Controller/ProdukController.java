@@ -7,6 +7,7 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
@@ -40,6 +41,7 @@ public class ProdukController {
         return ResponseEntity.ok(response);
     }
     @GetMapping("/get")
+   // @Scheduled(cron = "*/30 * * * * *")
     public ResponseEntity <List<ProdukDto>> getAllProduk (){
        List<ProdukDto> produk = produkService.getAllProduk();
        return ResponseEntity.ok(produk);
