@@ -1,4 +1,4 @@
-package com.example.gen20javaspringbootpos.Response;
+package com.example.gen20javaspringbootpossecurity.Response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
