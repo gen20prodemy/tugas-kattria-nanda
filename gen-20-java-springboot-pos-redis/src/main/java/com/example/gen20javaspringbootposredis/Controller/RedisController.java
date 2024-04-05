@@ -1,7 +1,7 @@
-package com.example.gen20javaspringbootpos.Controller;
+package com.example.gen20javaspringbootposredis.Controller;
 
-import com.example.gen20javaspringbootpos.ModelDto.KategoriDto;
-import com.example.gen20javaspringbootpos.Service.RedisService;
+import com.example.gen20javaspringbootposredis.ModelDto.KategoriDto;
+import com.example.gen20javaspringbootposredis.Service.RedisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

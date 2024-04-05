@@ -1,6 +1,6 @@
-package com.example.gen20javaspringbootpos.Service;
+package com.example.gen20javaspringbootposredis.Service;
 
-import com.example.gen20javaspringbootpos.ModelDto.KategoriDto;
+import com.example.gen20javaspringbootposredis.ModelDto.KategoriDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
