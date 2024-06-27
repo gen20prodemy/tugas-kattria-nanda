@@ -1,4 +1,4 @@
-package com.example.MiniProject.Entity;
+package com.example.Mini.Project.Prodemi.Entity;
 
 import jakarta.persistence.*;
 import lombok.Data;

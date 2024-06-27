@@ -16,7 +16,7 @@ public class TryCacthExce {
         }catch (InputMismatchException e){
             System.err.println("\nError = Masukkan Bilangan Berupa Angka");
         }finally {
-            input.close();;
+            input.close();
         }
 
     }

@@ -6,6 +6,7 @@ public class array {
         int n = 4;
 
         String [][] arr = new String [n][n];
+
         for (int i=0 ; i<n; i++){
             for (int j=0; j<n; j++){
                 if (i==j || i+j== n-1){

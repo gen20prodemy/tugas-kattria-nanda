@@ -27,7 +27,6 @@ public class KategoriController {
     @PostMapping("/add")
     public ResponseEntity<ResponseDto<KategoriDto>> addKategori (@Valid @RequestBody KategoriDto kategoriDto, Errors errors){
         ResponseDto<KategoriDto> response = new ResponseDto<>();
-
           if(errors.hasErrors()){
             for (ObjectError error : errors.getAllErrors()){
                 response.getMessages().add(error.getDefaultMessage());

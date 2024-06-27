@@ -46,6 +46,34 @@ public class ProdukController {
        List<ProdukDto> produk = produkService.getAllProduk();
        return ResponseEntity.ok(produk);
     }
+//    @GetMapping("/getSort")
+//    public ResponseEntity <List<ProdukDto>> listProduk (
+//            @RequestParam(value = "produkNama", defaultValue = "") String produkNama,
+//            @RequestParam(value = "sort_by", defaultValue = "produkId") String sortBy,
+//            @RequestParam(value = "sort_order", defaultValue = "asc") String sortOrder){
+//
+//        List<ProdukDto> produk = produkService.listProduct(produkNama,sortBy,sortOrder);
+//        return ResponseEntity.ok(produk);
+//    }
+
+    @PostMapping("/creat")
+    public ResponseEntity <ResponseDto<ProdukDto>> creatProduk (@Valid @RequestBody ProdukDto produkDto, Errors errors){
+        ResponseDto<ProdukDto> response = new ResponseDto<>();
+        if(errors.hasErrors()){
+            for (ObjectError error : errors.getAllErrors()){
+                response.getMessages().add(error.getDefaultMessage());
+            }
+            response.setStatus(false);
+            response.setPayload(null);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+        }
+        response.setStatus(true);
+        response.setMessages(Collections.singletonList("Produk berhasil ditambahkan!"));
+        response.setPayload(produkService.creatProduk(produkDto));
+        return ResponseEntity.ok(response);
+    }
+
+
 
 
 }

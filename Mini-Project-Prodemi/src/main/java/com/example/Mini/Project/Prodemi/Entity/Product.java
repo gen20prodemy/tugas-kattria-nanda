@@ -1,6 +1,5 @@
-package com.example.MiniProject.Entity;
+package com.example.Mini.Project.Prodemi.Entity;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -23,6 +22,16 @@ public class Product {
 
     @ManyToOne
     @JoinColumn(name = "category_id")
-    @JsonManagedReference
     private Category category;
+
+    public Product(String title, Integer price, String image, Category category) {
+        this.title = title;
+        this.price = price;
+        this.image = image;
+        this.category = category;
+    }
+
+    public Product() {
+
+    }
 }

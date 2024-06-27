@@ -1,23 +1,37 @@
-package com.example.MiniProject.Entity;
+package com.example.Mini.Project.Prodemi.Entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import java.util.Set;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
-import lombok.Data;
+import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
+import lombok.Setter;
 
-import java.util.List;
-
-@Data
 @Entity
 @Table(name = "categories")
+@Getter
+@Setter
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "name", length = 50)
+    @NotNull
     private String name;
 
-    @OneToMany (mappedBy = "category")
-    @JsonBackReference
-    private List<Product> products;
+    @OneToMany(mappedBy = "category")
+    @JsonIgnore
+    private Set<Product> products;
+
+    public Category(String name) {
+        this.name = name;
+    }
+    public Category() {
+    }
+    public Category(Integer id) {
+        this.id = id;
+    }
 }

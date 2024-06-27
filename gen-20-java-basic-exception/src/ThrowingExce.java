@@ -15,10 +15,10 @@ public class ThrowingExce {
         validBilNegatif(b2);
 
     }
-
     public static int validBilPos (int a){
         if (a<0){
-            throw new InputMismatchException("Bilangan yang anda masukkan bukan bil. positif");
+            throw new InputMismatchException("Bilangan yang anda masukkan" +
+                                            " bukan bil. positif");
         }
             System.out.println("Angka "+a+" adalah bilangan bulat positif");
             return a;

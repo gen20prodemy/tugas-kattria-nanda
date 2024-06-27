@@ -1,2 +1,12 @@
-package com.example.Mini.Project.Prodemi.Repository;public interface TransactionDetailRepo {
+package com.example.Mini.Project.Prodemi.Repository;
+
+import com.example.Mini.Project.Prodemi.Entity.TransactionDetails;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface TransactionDetailRepo extends JpaRepository<TransactionDetails, Integer> {
+    List<TransactionDetails> findByTransactions_Id(int transactionId);
 }

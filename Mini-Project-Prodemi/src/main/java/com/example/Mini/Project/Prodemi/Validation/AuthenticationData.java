@@ -1,4 +1,4 @@
-package com.example.Mini.Project.Prodemi.Dto;
+package com.example.Mini.Project.Prodemi.Validation;
 
 import lombok.Data;
 
