@@ -87,6 +87,16 @@ public class CategoryController {
         List<CategoryDetailDto> category = categoryService.getAllCategory();
         return ResponseEntity.ok(category);
     }
+    // @GetMapping("/categories/{categoryId}")
+    // public ResponseEntity<CategoryDetailDto> getDetailById (@PathVariable Long categoryId){
+    //     System.out.printf("Ini id: %d%n", categoryId);
+    //     CategoryDetailDto category = categoryService.getDetailById(categoryId);
+    //     if (category != null) {
+    //         return new ResponseEntity<>(category, HttpStatus.OK);
+    //     } else {
+    //         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    //     }
+    // }
     @GetMapping("/categories/{id}")
     public ResponseEntity<?> getDetailById (@PathVariable String id){
         int categoryId;
@@ -104,18 +114,7 @@ public class CategoryController {
             responseData.setMessages(Collections.singletonList("Id harus berupa bilangan positif"));
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseData);
         }
-        List<CategoryDetailDto> category = categoryService.getDetailById(categoryId);
+        List<CategoryDetailDto> category =  categoryService.getDetailById(categoryId);
         return ResponseEntity.ok(category);
     }
-
-    // @GetMapping("/categories/{id}")
-    // public ResponseEntity<CategoryDetailDto> getDetailById (@PathVariable Long id){
-    //     CategoryDetailDto category = categoryService.getDetailById(id);
-    //     if (category != null) {
-    //         return new ResponseEntity<>(category, HttpStatus.OK);
-    //     } else {
-    //         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-    //     }
-    // }
-
 }

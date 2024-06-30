@@ -8,11 +8,12 @@ import com.example.Mini.Project.Prodemi.Exception.CategoryNotFoundException;
 import com.example.Mini.Project.Prodemi.Exception.ProductNotFoundException;
 import com.example.Mini.Project.Prodemi.Repository.CategoryRepository;
 import com.example.Mini.Project.Prodemi.Repository.ProductRepository;
+import com.example.Mini.Project.Prodemi.Repository.TransactionDetailRepo;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -20,12 +21,14 @@ import java.util.stream.Collectors;
 public class ProductService {
     private final ProductRepository productRepository;
     private final CategoryRepository categoryRepository;
+    private final TransactionDetailRepo transactionDetailRepo;
 
 
     @Autowired
-    public ProductService(ProductRepository productRepository, CategoryRepository categoryRepository) {
+    public ProductService(ProductRepository productRepository, CategoryRepository categoryRepository, TransactionDetailRepo transactionDetailRepo) {
         this.productRepository = productRepository;
         this.categoryRepository = categoryRepository;
+        this.transactionDetailRepo= transactionDetailRepo;
     }
 
     public void addProduct (ProductDto productDto){
@@ -54,15 +57,20 @@ public class ProductService {
 
     public void deleteProduct (int id){
         productRepository.findById(id).orElseThrow(() -> new ProductNotFoundException("Product Not Found"));
+
+        boolean productInTransaction = transactionDetailRepo.existsByProductId(id);
+        if(productInTransaction) {
+            throw new IllegalStateException("sudah terjadi transaksi pada produk");
+        }
         productRepository.deleteById(id);
     }
 
-    public List<Product> detailProduct(int id) {
-        Product products = productRepository.findById(id).orElse(null);
-        if (products == null) {
-            throw new ProductNotFoundException("");
-        }
-        return productRepository.findAllById(Collections.singleton(id));
+    public Product detailProduct(int id) {
+        return productRepository.findById(id).orElseThrow(() -> new ProductNotFoundException("Product Not found"));
+        // if (products == null) {
+        //     throw new ProductNotFoundException("");
+        // }
+        // return productRepository.findAllById(Collections.singleton(id));
     }
     public List<Product> detailProduct() {
         return productRepository.findAll();

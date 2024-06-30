@@ -9,4 +9,6 @@ import java.util.List;
 @Repository
 public interface TransactionDetailRepo extends JpaRepository<TransactionDetails, Integer> {
     List<TransactionDetails> findByTransactions_Id(int transactionId);
+
+    boolean existsByProductId(int productId); //memeriksa produk ada di detail transaksi
 }

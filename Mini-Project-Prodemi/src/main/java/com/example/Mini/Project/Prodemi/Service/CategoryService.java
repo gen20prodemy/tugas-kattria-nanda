@@ -61,12 +61,9 @@ public class CategoryService {
     // public CategoryDetailDto getDetailById(long categoryId) {
     //     return categoryRepository.findCategoryDetailDtoById(categoryId);
     // }
-    public List<CategoryDetailDto> getDetailById(int id) {
-        CategoryDetailDto category = categoryRepository.findCategoryDetailDtoById(id);
-        if (category == null) {
-            throw new CategoryNotFoundException("");
-        }
-        return categoryRepository.findAllCategoriesProductCOunt();
+    public List <CategoryDetailDto> getDetailById(int categoryId) {
+        List<CategoryDetailDto> category = categoryRepository.findCategoryDetailDtoById(categoryId);
+        return category;
     }
     
 }

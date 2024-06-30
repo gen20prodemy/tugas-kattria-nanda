@@ -16,7 +16,13 @@ public interface CategoryRepository extends JpaRepository<Category, Integer> {
            "FROM Category c LEFT JOIN Product p ON c.id = p.category.id " +
            "GROUP BY c.id, c.name")
     List<CategoryDetailDto> findAllCategoriesProductCOunt();
+ 
+    // @Query("SELECT c, COUNT(p) AS productCount FROM Category c LEFT JOIN c.products p WHERE c.id = :categoryId GROUP BY c")
+    // Object[] findCategoryDetailDtoById (@Param("categoryId") int categoryId);
 
-    @Query("SELECT c, COUNT(p) AS productCount FROM Category c LEFT JOIN c.products p WHERE c.id = :categoryId GROUP BY c")
-    CategoryDetailDto findCategoryDetailDtoById (@Param("categoryId") Integer categoryId);
+      @Query("SELECT new com.example.Mini.Project.Prodemi.Dto.CategoryDetailDto(c.id, c.name, COUNT(p)) " +
+           "FROM Category c LEFT JOIN Product p ON c.id = p.category.id " +
+           "WHERE c.id = :categoryId " +
+           "GROUP BY c.id, c.name")
+    List<CategoryDetailDto> findCategoryDetailDtoById (@Param("categoryId") int categoryId);
 }

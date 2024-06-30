@@ -4,6 +4,7 @@ package com.example.Mini.Project.Prodemi.Controller;
 import com.example.Mini.Project.Prodemi.Dto.ProductDto;
 import com.example.Mini.Project.Prodemi.Validation.ResponseData;
 import com.example.Mini.Project.Prodemi.Entity.Product;
+import com.example.Mini.Project.Prodemi.Exception.ProductNotFoundException;
 import com.example.Mini.Project.Prodemi.Service.ProductService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/pos/api")
@@ -86,22 +86,34 @@ public class ProductController {
     }
 
     @DeleteMapping("/deleteproduct/{id}")
-    public ResponseEntity<ResponseData<String>> deleteProduct (@PathVariable (required = false) String id){
-        int productId;
+    public ResponseEntity<String> deteleProduct(@PathVariable int id){
         try{
-            productId = Integer.parseInt(id);
-        }catch (NumberFormatException e){
-            ResponseData<String> responseData = new ResponseData<>();
-            responseData.setStatus("failed");
-            responseData.setMessages(Collections.singletonList("Id harus berupa angka"));
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseData);
+            productService.deleteProduct(id);
+            return ResponseEntity.ok("Sukses deleted product");
+        } catch (IllegalStateException e) {
+            return ResponseEntity.status(400).body(e.getMessage());
+        } catch (ProductNotFoundException e) {
+            return ResponseEntity.status(404).body(e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body("An error occurred while deleting the product");
         }
-        if (productId <= 0 ){
-            ResponseData<String> responseData = new ResponseData<>();
-            responseData.setStatus("failed");
-            responseData.setMessages(Collections.singletonList("Id harus berupa bilangan positif"));
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseData);
-        }
+    }
+    // public ResponseEntity<ResponseData<String>> deleteProduct (@PathVariable (required = false) String id){
+    //     int productId;
+    //     try{
+    //         productId = Integer.parseInt(id);
+    //     }catch (NumberFormatException e){
+    //         ResponseData<String> responseData = new ResponseData<>();
+    //         responseData.setStatus("failed");
+    //         responseData.setMessages(Collections.singletonList("Id harus berupa angka"));
+    //         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseData);
+    //     }
+    //     if (productId <= 0 ){
+    //         ResponseData<String> responseData = new ResponseData<>();
+    //         responseData.setStatus("failed");
+    //         responseData.setMessages(Collections.singletonList("Id harus berupa bilangan positif"));
+    //         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseData);
+    //     }
 //        else if (id == null || id.isEmpty()) {
 //            ResponseData<String> responseData = new ResponseData<>();
 //            responseData.setStatus("failed");
@@ -110,34 +122,38 @@ public class ProductController {
 //
 //        }
 
-        productService.deleteProduct(productId);
-        ResponseData<String> responseData = new ResponseData<>();
-        responseData.setStatus("ok");
-        responseData.setMessages(Collections.singletonList("success"));
-        return ResponseEntity.ok(responseData);
+    //     productService.deleteProduct(productId);
+    //     ResponseData<String> responseData = new ResponseData<>();
+    //     responseData.setStatus("ok");
+    //     responseData.setMessages(Collections.singletonList("success"));
+    //     return ResponseEntity.ok(responseData);
 
-    }
+    // }
 
     @GetMapping("/detailproduct/{id}")
-    public ResponseEntity<?> detailProduct (@PathVariable String id){
-        int productId;
-        try{
-            productId = Integer.parseInt(id);
-        }catch (NumberFormatException e){
-            ResponseData<Optional<Product>> responseData = new ResponseData<>();
-            responseData.setStatus("failed");
-            responseData.setMessages(Collections.singletonList("Id harus berupa angka"));
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseData);
-        }
-        if (productId <= 0 ){
-            ResponseData<String> responseData = new ResponseData<>();
-            responseData.setStatus("failed");
-            responseData.setMessages(Collections.singletonList("Id harus berupa bilangan positif"));
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseData);
-        }
-        List<Product> product = productService.detailProduct(productId);
+    public ResponseEntity<Product> detailProduct(@PathVariable int id) {
+        Product product = productService.detailProduct(id);
         return ResponseEntity.ok(product);
     }
+    // public ResponseEntity<?> detailProduct (@PathVariable String id){
+    //     int productId;
+    //     try{
+    //         productId = Integer.parseInt(id);
+    //     }catch (NumberFormatException e){
+    //         ResponseData<Optional<Product>> responseData = new ResponseData<>();
+    //         responseData.setStatus("failed");
+    //         responseData.setMessages(Collections.singletonList("Id harus berupa angka"));
+    //         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseData);
+    //     }
+    //     if (productId <= 0 ){
+    //         ResponseData<String> responseData = new ResponseData<>();
+    //         responseData.setStatus("failed");
+    //         responseData.setMessages(Collections.singletonList("Id harus berupa bilangan positif"));
+    //         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseData);
+    //     }
+    //     List<Product> product = productService.detailProduct(productId);
+    //     return ResponseEntity.ok(product);
+    // }
     @GetMapping("/detailproduct")
     public ResponseEntity<?> detailProduct (){
         List<Product> product = productService.detailProduct();
